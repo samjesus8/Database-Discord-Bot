@@ -6,14 +6,18 @@ namespace DiscordBotTemplate.Database
 {
     public class DBEngine
     {
-        private string connectionString = "Host=b5siykqdvfriib0pkesn-postgresql.services.clever-cloud.com;Username=uleybizuyfu2ivb2cfiw;Password=Nbz4m4AFb40j8xsBSSU2uMLigq64WU;Database=b5siykqdvfriib0pkesn";
+        private string connectionString = "Host=ENTER-HOST-HERE;Username=ENTER-USERNAME-HERE;Password=ENTER-PASSWORD-HERE;Database=ENTER-DB-HERE";
 
         public async Task<bool> StoreUserAsync(DUser user)
         {
-            var userNo = await GetTotalUsersAsync() + 1;
+            var userNo = await GetTotalUsersAsync();
             if (userNo == -1)
             {
                 throw new Exception();
+            }
+            else
+            {
+                userNo++;
             }
 
             try
